@@ -373,7 +373,7 @@ if (v==40):
 elif (v==100):
     model = DenseNet100(input_shape=input_shape, classes=num_classes)
 
-#model.summary()
+# model.summary()
 print(model_type)
 
 # Load pre-trained weights
