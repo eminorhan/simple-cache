@@ -1,4 +1,4 @@
-"""Black box attacks on cache models.
+"""Black-box attacks on cache models.
 """
 from __future__ import print_function
 import os
