@@ -1,7 +1,6 @@
 """Trains ResNet models with different depth on the CIFAR image recognition benchmarks (CIFAR-10 and CIFAR-100).
 ResNet v1 [a] Deep Residual Learning for Image Recognition: https://arxiv.org/pdf/1512.03385.pdf
 """
-
 from __future__ import print_function
 import os
 import sys
