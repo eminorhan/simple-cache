@@ -1,6 +1,5 @@
 """Trains DenseNet models with different depth on the CIFAR image recognition benchmarks (CIFAR-10 and CIFAR-100).
 """
-
 from __future__ import print_function
 import os
 import sys
