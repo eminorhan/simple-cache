@@ -1,6 +1,5 @@
 """Hyperparameter search over theta and lambda for the DenseNet cache models.
 """
-
 from __future__ import print_function
 import os
 import sys
