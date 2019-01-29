@@ -1,6 +1,5 @@
 """Evaluate DenseNet CacheOnly models on CIFAR benchmarks.
 """
-
 from __future__ import print_function
 import os
 import sys
