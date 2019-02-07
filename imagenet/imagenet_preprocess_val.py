@@ -23,6 +23,7 @@ sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 1)
 job_idx    = int(os.getenv('SLURM_ARRAY_TASK_ID'))
 
 num_batches = 10
+num_imgs_per_batch = 5000
 
 model = ResNet50(weights='imagenet')
 model.summary()
@@ -37,7 +38,7 @@ labels = np.loadtxt('ILSVRC2012_validation_ground_truth.txt')
 
 for i in range(num_batches):
     all_imgs = []
-    for file_indx in file_list[(num_batches*5000):((num_batches+1)*5000)]:
+    for file_indx in file_list[(num_batches*num_imgs_per_batch):((num_batches+1)*num_imgs_per_batch)]:
         file_name = base_dir + file_indx
         img = image.load_img(file_name, target_size=(224, 224))
         x = image.img_to_array(img)
@@ -46,7 +47,7 @@ for i in range(num_batches):
         all_imgs.append(x)
 
     all_imgs = np.squeeze(np.asarray(all_imgs))
-    all_labels = labels[(num_batches*5000):((num_batches+1)*5000)]
+    all_labels = labels[(num_batches*num_imgs_per_batch):((num_batches+1)*num_imgs_per_batch)]
 
     print(all_imgs.shape)
     print(all_labels.shape)
