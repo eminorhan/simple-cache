@@ -76,14 +76,14 @@ mem_vals = keras.utils.to_categorical(mem_vals, n_classes)
 print(mem_keys.shape)
 print(mem_vals.shape)
 
-num_batches = 10
+num_batches = 50
 val_accs_mem = np.zeros(num_batches)
 val_accs_nomem = np.zeros(num_batches)
 
 # Pass validation items thru memory
 for val_batch in range(num_batches):
-    x_val = sio.loadmat(val_data_dir + 'val_batch_%i'%(val_batch+1))['all_imgs'][:5000,:,:,:]
-    y_val = np.loadtxt('ILSVRC2012_validation_ground_truth.txt',usecols=1)[(val_batch*5000):((val_batch+1)*5000)]
+    x_val = sio.loadmat(val_data_dir + 'val_batch_%i'%(val_batch+1))['all_imgs'][:1000,:,:,:]
+    y_val = np.loadtxt('ILSVRC2012_validation_ground_truth.txt',usecols=1)[(val_batch*1000):((val_batch+1)*1000)]
 
     x_val = np.float32(x_val)
     y_val = np.int32(y_val)
