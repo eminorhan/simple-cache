@@ -2,7 +2,7 @@
 
 This repository contains the code for reproducing the results reported in the following paper: 
 
-Orhan AE (2018) [A simple cache model for image recognition.](https://arxiv.org/abs/1805.08709) *NIPS 2018* [arxiv:1805.08709].
+Orhan AE (2018) [A simple cache model for image recognition.](https://arxiv.org/abs/1805.08709) *NeurIPS 2018* [arxiv:1805.08709].
 
 The code was written and tested in Tensorflow (v1.4.0) and Keras (v2.0.9) on a GPU cluster. Other configurations may or may not work. Please let me know if you have any trouble running the code. A brief description of the directories follows:
 
