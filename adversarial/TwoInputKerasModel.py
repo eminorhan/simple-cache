@@ -61,9 +61,10 @@ class TwoInputKerasModel(DifferentiableModel):
 
         if predicts == 'probabilities':
             if K.backend() == 'tensorflow':
-                predictions = predictions.op.inputs[0]
+                # predictions = predictions.op.inputs[0]
                 loss = K.sparse_categorical_crossentropy(
-                    label_input, predictions, from_logits=True)
+                    label_input, predictions, from_logits=False)
+                predictions = self._to_logits(predictions)
             else:
                 logging.warning('relying on numerically unstable conversion'
                                 ' from probabilities to softmax')
